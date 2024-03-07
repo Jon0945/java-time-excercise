@@ -12,6 +12,8 @@ public class App
        ex01();
     }
 
+    /** Working with LocalDate **/
+
     public static void ex01() {
         //Create a LocalDate of the current day and print it out
         LocalDate currentDate = LocalDate.now();
@@ -98,11 +100,28 @@ public class App
         System.out.println(currentTime);
         ex10();
     }
-
     public static void ex10() {
         //Extract the nanoseconds of a LocalTime object of current time. Print out the nanoseconds.
         LocalTime currentTime = LocalTime.now();
         System.out.println();
         System.out.println(currentTime.getNano());
+        ex11();
+    }
+
+    public static void ex11() {
+        // Create a LocalTime object from a String using the .parse() method.
+        String time = "13:50:26";
+        LocalTime localTime = LocalTime.parse(time);
+        System.out.println();
+        System.out.println(localTime);
+        ex12();
+    }
+
+    public static void ex12() {
+        // Using DateTimeFormatter format LocalTime from current time and print it out as following pattern: 10:32:53
+        LocalTime currentTime = LocalTime.now();
+        String custom = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+        System.out.println();
+        System.out.println(custom);
     }
 }
