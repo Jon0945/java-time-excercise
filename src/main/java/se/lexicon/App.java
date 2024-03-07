@@ -143,7 +143,26 @@ public class App
         String custom = dateTime.format(DateTimeFormatter.ofPattern("eeee d MMMM HH:mm"));
         System.out.println();
         System.out.println(custom);
+        ex15();
+    }
 
+    public static void ex15() {
+        //Create a LocalDateTime object by combining LocalDate object and LocalTime object.
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+        LocalDateTime currentDateTime = LocalDateTime.of(currentDate,currentTime);
+        System.out.println();
+        System.out.println(currentDateTime);
+        ex16();
+    }
 
+    public static void ex16() {
+        //Create a LocalDateTime object. Then get the LocalDate and LocalTime components into
+        // separate objects of respective types from the LocalDateTime object.
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        LocalDate currentDate = currentDateTime.toLocalDate();
+        LocalTime currentTime = currentDateTime.toLocalTime();
+        System.out.println();
+        System.out.println("Date: " +currentDate + " Time: " + currentTime);
     }
 }
