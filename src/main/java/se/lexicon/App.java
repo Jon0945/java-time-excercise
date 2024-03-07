@@ -21,7 +21,7 @@ public class App
 
     public static void ex02() {
         //Create a LocalDate of the current day and print it out in the following pattern using DateTimeFormatter:
-        /** Torsdag 29 mars. **/
+        // Torsdag 29 mars.
         LocalDate currentDate = LocalDate.now();
         String custom = currentDate.format(DateTimeFormatter.ofPattern("eeee dd MMM yyyy"));
         System.out.println();
@@ -63,6 +63,26 @@ public class App
         LocalDate date = LocalDate.now().plusYears(10).minusMonths(10);
         System.out.println();
         System.out.println(date.getMonth());
+        ex07();
+    }
 
+    public static void ex07() {
+        //Using the LocalDate from exercise 6 and your birthdate, create a Period between your birthdate and the date
+        // from exercise 5. Print out the elapsed years, months and days.
+        LocalDate myBirthDay = LocalDate.of(1978,5,10);
+        LocalDate date = LocalDate.now().plusYears(10).minusMonths(10);
+        Period period = Period.between(myBirthDay,date);
+        System.out.println();
+        System.out.println(period.getYears() + " years , " + period.getMonths() + " months , " + period.getDays() + " days");
+        ex08();
+    }
+
+    public static void ex08() {
+        //Create a period of 4 years, 7 months and 29 days. Then create a LocalDate of current date and
+        // add the period you created to the current date.
+        Period period = Period.of(4,7,29);
+        LocalDate currentDate = LocalDate.now();
+        LocalDate newDate = currentDate.plus(period);
+        System.out.println(newDate);
     }
 }
