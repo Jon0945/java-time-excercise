@@ -123,5 +123,27 @@ public class App
         String custom = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
         System.out.println();
         System.out.println(custom);
+        ex13();
+    }
+
+    /** Working with LocalDateTime **/
+
+    public static void ex13() {
+        //Create a LocalDateTime with the date and time components as: date: 2018-04-05, time: 10.00
+        LocalDateTime dateTime = LocalDateTime.of(2018,4,5,10,0);
+        System.out.println();
+        System.out.println(dateTime);
+        ex14();
+    }
+
+    public static void ex14() {
+        //Using DateTimeFormatter format the LocalDateTime object from exercise 13 to a String
+        // that should look like this: torsdag 5 april 10:00
+        LocalDateTime dateTime = LocalDateTime.of(2018,4,5,10,0);
+        String custom = dateTime.format(DateTimeFormatter.ofPattern("eeee d MMMM HH:mm"));
+        System.out.println();
+        System.out.println(custom);
+
+
     }
 }
