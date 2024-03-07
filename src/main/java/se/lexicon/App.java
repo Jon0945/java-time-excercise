@@ -2,6 +2,7 @@ package se.lexicon;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class App
 {
@@ -83,6 +84,25 @@ public class App
         Period period = Period.of(4,7,29);
         LocalDate currentDate = LocalDate.now();
         LocalDate newDate = currentDate.plus(period);
+        System.out.println();
         System.out.println(newDate);
+        ex09();
+    }
+
+    /** Working with LocalTime **/
+
+    public static void ex09() {
+        //Create a LocalTime object of the current time.
+        LocalTime currentTime = LocalTime.now();
+        System.out.println();
+        System.out.println(currentTime);
+        ex10();
+    }
+
+    public static void ex10() {
+        //Extract the nanoseconds of a LocalTime object of current time. Print out the nanoseconds.
+        LocalTime currentTime = LocalTime.now();
+        System.out.println();
+        System.out.println(currentTime.getNano());
     }
 }
